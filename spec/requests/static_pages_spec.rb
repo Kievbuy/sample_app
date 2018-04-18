@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe 'Static Pages' do
   
+  let(:base_title) {"Ruby on Rails Tutorial Sample App"}
+  
   describe 'Home page' do
     before(:each) do
       visit '/static_pages/home'
@@ -12,7 +14,7 @@ describe 'Static Pages' do
     end
     
     it "should have the right title" do
-      expect(page).to have_title "Home | Ruby on Rails Tutorial Sample App"
+      expect(page).to have_title "Home | #{base_title}"
     end
     
   end
@@ -27,7 +29,7 @@ describe 'Static Pages' do
     end
     
     it "should have the right title" do
-      expect(page).to have_title "Help | Ruby on Rails Tutorial Sample App"
+      expect(page).to have_title "Help | #{base_title}"
     end
     
   end
@@ -42,9 +44,23 @@ describe 'Static Pages' do
     end
     
     it "should have the right title" do
-      expect(page).to have_title "About us | Ruby on Rails Tutorial Sample App"
+      expect(page).to have_title "About us | #{base_title}"
     end
     
+  end
+  
+  describe "Contact page" do
+    before(:each) do
+      visit '/static_pages/contact'
+    end
+    
+    it "should have content 'Contact'" do
+      expect(page).to have_selector('h1', text: 'Contact')
+    end
+    
+    it "should have the right title" do
+      expect(page).to have_title "Contact | #{base_title}"
+    end
   end
   
 end
