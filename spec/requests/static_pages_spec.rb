@@ -6,7 +6,7 @@ describe 'Static Pages' do
   
   describe 'Home page' do
     before(:each) do
-      visit '/static_pages/home'
+      visit root_path
     end
     
     it "should have content 'Sample App'" do
@@ -25,7 +25,7 @@ describe 'Static Pages' do
   
   describe 'Help page' do
     before(:each) do
-      visit '/static_pages/help'
+      visit help_path
     end
     
     it "should have conent 'Help'" do
@@ -40,7 +40,7 @@ describe 'Static Pages' do
   
   describe "About page" do
     before(:each) do
-      visit '/static_pages/about'
+      visit about_path
     end
     
     it "should have content 'About'" do
@@ -55,7 +55,7 @@ describe 'Static Pages' do
   
   describe "Contact page" do
     before(:each) do
-      visit '/static_pages/contact'
+      visit contact_path
     end
     
     it "should have content 'Contact'" do
